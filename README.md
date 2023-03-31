@@ -1,7 +1,11 @@
 # biosajrajt
 
+===============================================================================
+
 python3 aplikace pro vyhledání dostupnosti paliva bez biosložky
 program využívá vstupní data z oficiální aplikace https://play.google.com/store/apps/details?id=eu.fss.mobile.eurooil&hl=cs&pli=1
+
+===============================================================================
 
 
 tooly použité při vývoji:
@@ -17,6 +21,9 @@ https://httptoolkit.com/
 #json toold online
 
 https://jsonformatter.org/json-to-jsonschema?utm_content=cmp-true
+
+===============================================================================
+
 
 
 #historie - počátek povinné biosložky v ČR
