@@ -4,6 +4,15 @@ python3 aplikace pro vyhledání dostupnosti paliva bez biosložky
 program využívá vstupní data z oficiální aplikace https://play.google.com/store/apps/details?id=eu.fss.mobile.eurooil&hl=cs&pli=1
 
 
+tooly použité při vývoji:
+#virtual android device
+https://www.genymotion.com/
+#http traffic sniffer
+https://httptoolkit.com/
+#json toold online
+https://jsonformatter.org/json-to-jsonschema?utm_content=cmp-true
+
+
 #historie - počátek povinné biosložky v ČR
 https://www.mpo.cz/cz/rozcestnik/pro-media/tiskove-zpravy/zavadeni-biopaliv-v-ceske-republice--34289/
 
