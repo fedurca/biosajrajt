@@ -7,8 +7,10 @@ program využívá vstupní data z oficiální aplikace https://play.google.com/
 tooly použité při vývoji:
 #virtual android device
 https://www.genymotion.com/
+
 #http traffic sniffer
 https://httptoolkit.com/
+
 #json toold online
 https://jsonformatter.org/json-to-jsonschema?utm_content=cmp-true
 
