@@ -1,0 +1,76 @@
+
+https://einfo.ceproas.cz/cepro_portal_ws/rest/common/prox/mobileData
+
+accept-encoding: gzip
+authorization: Basic bW9iYXA6RVdpa0Ey
+connection: Keep-Alive
+content-length: 99
+content-type: application/json; charset=UTF-8
+host: einfo.ceproas.cz
+user-agent: okhttp/4.9.0
+
+{
+  "search": {
+    "exclude_cs_ceny": false,
+    "exclude_cs_kvalita": false
+  },
+  "version": 5
+}
+
+
+{
+  "encyklopedie": {
+    "full": true,
+  },
+  "version": 5
+}
+
+example:
+https://gist.github.com/laszlomiklosik/825711ccadca4035dce83c08c81a6f1b
+
+curl -X PATCH https://einfo.ceproas.cz/cepro_portal_ws/rest/common/prox/mobileData -H 'accept-encoding: gzip' -H 'authorization: Basic bW9iYXA6RVdpa0Ey' -H 'connection: Keep-Alive' -H 'content-length: 99' -H 'content-type: application/json; charset=UTF-8' -H 'host: einfo.ceproas.cz' -H 'user-agent: okhttp/4.9.0' -d @- <<BODY
+{
+  "search": {
+    "exclude_cs_ceny": false,
+    "exclude_cs_kvalita": false
+  },
+  "version": 5
+}
+BODY
+
+curl -0 -v -X POST https://einfo.ceproas.cz/cepro_portal_ws/rest/common/prox/mobileData \
+-H 'accept-encoding: gzip' \
+-H 'authorization: Basic bW9iYXA6RVdpa0Ey' \
+-H 'connection: Keep-Alive' \
+-H 'content-length: 99' \
+-H 'content-type: application/json; charset=UTF-8' \
+-H 'host: einfo.ceproas.cz' \
+-H 'user-agent: okhttp/4.9.0' \
+--data-binary @- << EOF
+{
+  "search": {
+    "exclude_cs_ceny": false,
+    "exclude_cs_kvalita": false
+  },
+  "version": 5
+}
+EOF \ > cepro_data.json
+
+
+curl -o cepro_data.json -0 -v -X POST https://einfo.ceproas.cz/cepro_portal_ws/rest/common/prox/mobileData \
+-H 'accept-encoding: gzip' \
+-H 'authorization: Basic bW9iYXA6RVdpa0Ey' \
+-H 'connection: Keep-Alive' \
+-H 'content-length: 99' \
+-H 'content-type: application/json; charset=UTF-8' \
+-H 'host: einfo.ceproas.cz' \
+-H 'user-agent: okhttp/4.9.0' \
+--data-binary @- << EOF
+{
+  "search": {
+    "exclude_cs_ceny": false,
+    "exclude_cs_kvalita": false
+  },
+  "version": 5
+}
+EOF

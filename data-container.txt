@@ -1,0 +1,637 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome9",
+    "definitions": {
+        "Welcome9": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "success": {
+                    "type": "boolean"
+                },
+                "Error": {
+                    "$ref": "#/definitions/Error"
+                },
+                "Data": {
+                    "$ref": "#/definitions/Data"
+                },
+                "Info": {
+                    "$ref": "#/definitions/Info"
+                }
+            },
+            "required": [
+                "Data",
+                "Error",
+                "Info",
+                "success"
+            ],
+            "title": "Welcome9"
+        },
+        "Data": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "cs_ceny": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CSCeny"
+                    }
+                },
+                "cs_var_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CSVarList"
+                    }
+                },
+                "cis_prod_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CisProdList"
+                    }
+                },
+                "cs_kvalita": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CSKvalita"
+                    }
+                },
+                "cis_kvalita_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CisKvalitaList"
+                    }
+                },
+                "cis_svc_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CisSVCList"
+                    }
+                },
+                "cs_fix_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CSFixList"
+                    }
+                },
+                "cis_hodnoceni": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CisHodnoceni"
+                    }
+                }
+            },
+            "required": [
+                "cis_hodnoceni",
+                "cis_kvalita_list",
+                "cis_prod_list",
+                "cis_svc_list",
+                "cs_ceny",
+                "cs_fix_list",
+                "cs_kvalita",
+                "cs_var_list"
+            ],
+            "title": "Data"
+        },
+        "CisHodnoceni": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "poradi": {
+                    "type": "integer"
+                },
+                "kod_kriteria": {
+                    "type": "integer"
+                },
+                "nazev_kriteria": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "kod_kriteria",
+                "nazev_kriteria",
+                "poradi"
+            ],
+            "title": "CisHodnoceni"
+        },
+        "CisKvalitaList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "jednotka_parametr": {
+                    "type": "string"
+                },
+                "poradi": {
+                    "type": "integer"
+                },
+                "kod_parametr": {
+                    "$ref": "#/definitions/KodParametr"
+                },
+                "nazev_parametr": {
+                    "type": "string"
+                },
+                "enc_keypath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "enc_keypath",
+                "jednotka_parametr",
+                "kod_parametr",
+                "nazev_parametr",
+                "poradi"
+            ],
+            "title": "CisKvalitaList"
+        },
+        "CisProdList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "poradi": {
+                    "type": "integer"
+                },
+                "nazev_produkt": {
+                    "type": "string"
+                },
+                "enc_keypath": {
+                    "type": "string"
+                },
+                "kod_produkt": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "kod_produkt",
+                "nazev_produkt",
+                "poradi"
+            ],
+            "title": "CisProdList"
+        },
+        "CisSVCList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "poradi": {
+                    "type": "integer"
+                },
+                "kod_sluzba": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "nazev_sluzba": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "kod_sluzba",
+                "nazev_sluzba",
+                "poradi"
+            ],
+            "title": "CisSVCList"
+        },
+        "CSCeny": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ceny": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Ceny"
+                    }
+                },
+                "kod_cs": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "ceny",
+                "kod_cs"
+            ],
+            "title": "CSCeny"
+        },
+        "Ceny": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "cena": {
+                    "type": "number"
+                },
+                "kod_produkt": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "cena",
+                "kod_produkt"
+            ],
+            "title": "Ceny"
+        },
+        "CSFixList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "psc": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "obec": {
+                    "type": "string"
+                },
+                "kraj": {
+                    "type": "string"
+                },
+                "cislo": {
+                    "$ref": "#/definitions/CisloUnion"
+                },
+                "nazev_dlouhy": {
+                    "type": "string"
+                },
+                "ulice": {
+                    "type": "string"
+                },
+                "okres": {
+                    "type": "string"
+                },
+                "GPS": {
+                    "$ref": "#/definitions/Gps"
+                },
+                "nazev_kratky": {
+                    "type": "string"
+                },
+                "kod_cs": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "GPS",
+                "cislo",
+                "kod_cs",
+                "kraj",
+                "nazev_dlouhy",
+                "nazev_kratky",
+                "obec",
+                "okres",
+                "psc",
+                "ulice"
+            ],
+            "title": "CSFixList"
+        },
+        "Gps": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "long_dec": {
+                    "type": "number"
+                },
+                "lat_dec": {
+                    "type": "number"
+                },
+                "long": {
+                    "type": "string"
+                },
+                "lat": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "lat",
+                "lat_dec",
+                "long",
+                "long_dec"
+            ],
+            "title": "Gps"
+        },
+        "CSKvalita": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "produkty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Produkty"
+                    }
+                },
+                "kod_cs": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "kod_cs",
+                "produkty"
+            ],
+            "title": "CSKvalita"
+        },
+        "Produkty": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "parametry": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Parametry"
+                    }
+                },
+                "kod_produkt": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "kod_produkt",
+                "parametry"
+            ],
+            "title": "Produkty"
+        },
+        "Parametry": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "kod_parametr": {
+                    "$ref": "#/definitions/KodParametr"
+                },
+                "hodnota": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "hodnota",
+                "kod_parametr"
+            ],
+            "title": "Parametry"
+        },
+        "CSVarList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "msgs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Msg"
+                    }
+                },
+                "sluzby": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "format": "integer"
+                    }
+                },
+                "telefon": {
+                    "type": "string"
+                },
+                "prezentace": {
+                    "$ref": "#/definitions/Prezentace"
+                },
+                "produkty": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "format": "integer"
+                    }
+                },
+                "provozni_doba": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ProvozniDoba"
+                    }
+                },
+                "kod_cs": {
+                    "type": "string",
+                    "format": "integer"
+                }
+            },
+            "required": [
+                "kod_cs",
+                "msgs",
+                "produkty",
+                "provozni_doba",
+                "sluzby",
+                "telefon"
+            ],
+            "title": "CSVarList"
+        },
+        "Msg": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "kratky_text": {
+                    "$ref": "#/definitions/KratkyText"
+                },
+                "poradi": {
+                    "type": "integer"
+                },
+                "dlouhy_text": {
+                    "$ref": "#/definitions/DlouhyText"
+                },
+                "uziv_text": {
+                    "type": "string"
+                },
+                "typ_zpravy": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "dlouhy_text",
+                "kratky_text",
+                "poradi",
+                "typ_zpravy",
+                "uziv_text"
+            ],
+            "title": "Msg"
+        },
+        "Prezentace": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "uziv_text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "uziv_text"
+            ],
+            "title": "Prezentace"
+        },
+        "ProvozniDoba": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "platnost_od": {
+                    "$ref": "#/definitions/PlatnostOd"
+                },
+                "st": {
+                    "$ref": "#/definitions/CT"
+                },
+                "ct": {
+                    "$ref": "#/definitions/CT"
+                },
+                "pa": {
+                    "$ref": "#/definitions/CT"
+                },
+                "ne": {
+                    "$ref": "#/definitions/CT"
+                },
+                "platnost_do": {
+                    "$ref": "#/definitions/PlatnostDo"
+                },
+                "so": {
+                    "$ref": "#/definitions/CT"
+                },
+                "po": {
+                    "$ref": "#/definitions/CT"
+                },
+                "ut": {
+                    "$ref": "#/definitions/CT"
+                }
+            },
+            "required": [
+                "platnost_do",
+                "platnost_od"
+            ],
+            "title": "ProvozniDoba"
+        },
+        "Error": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "errorText": {
+                    "type": "string"
+                },
+                "errorCode": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "errorCode",
+                "errorText"
+            ],
+            "title": "Error"
+        },
+        "Info": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "vytvoreno": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "actual_version": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "actual_version",
+                "vytvoreno"
+            ],
+            "title": "Info"
+        },
+        "CisloUnion": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/CisloEnum"
+                },
+                {
+                    "type": "string",
+                    "format": "integer"
+                }
+            ],
+            "title": "CisloUnion"
+        },
+        "KodParametr": {
+            "type": "string",
+            "enum": [
+                "1-1",
+                "1-2",
+                "1-3",
+                "4-1",
+                "4-2",
+                "4-3",
+                "1-4"
+            ],
+            "title": "KodParametr"
+        },
+        "CisloEnum": {
+            "type": "string",
+            "enum": [
+                "",
+                "148a",
+                "15a",
+                "65A",
+                "6a",
+                "2c",
+                "1b"
+            ],
+            "title": "CisloEnum"
+        },
+        "DlouhyText": {
+            "type": "string",
+            "enum": [
+                "Informace o příjezdu"
+            ],
+            "title": "DlouhyText"
+        },
+        "KratkyText": {
+            "type": "string",
+            "enum": [
+                "Upozornění"
+            ],
+            "title": "KratkyText"
+        },
+        "CT": {
+            "type": "string",
+            "enum": [
+                "06:00-20:00",
+                "06:00-19:00",
+                "06:00-18:00",
+                "00:00-23:59",
+                "05:00-22:00",
+                "05:00-21:00",
+                "05:00-18:00",
+                "05:00-20:00",
+                "06:00-22:00",
+                "06:00-21:00",
+                "07:00-19:00",
+                "07:00-17:00",
+                "05:30-22:00",
+                "05:30-21:00",
+                "05:00-23:00",
+                "07:00-16:00",
+                "08:00-13:00"
+            ],
+            "title": "CT"
+        },
+        "PlatnostDo": {
+            "type": "string",
+            "enum": [
+                "31.10.",
+                "31.03.",
+                "31.3.",
+                "31.12.",
+                "30.4.",
+                "30.09.",
+                "30.9.",
+                "30.04."
+            ],
+            "title": "PlatnostDo"
+        },
+        "PlatnostOd": {
+            "type": "string",
+            "enum": [
+                "01.04.",
+                "01.11.",
+                "1.11.",
+                "01.01.",
+                "1.1.",
+                "01.05.",
+                "1.10.",
+                "01.10.",
+                "1.4."
+            ],
+            "title": "PlatnostOd"
+        }
+    }
+}
