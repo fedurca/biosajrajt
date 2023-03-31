@@ -11,6 +11,9 @@ program využívá vstupní data z oficiální aplikace https://play.google.com/
 
 tooly použité při vývoji:
 
+
+https://reqbin.com/curl
+
 #virtual android device
 
 https://www.genymotion.com/
