@@ -3,6 +3,7 @@
 ===============================================================================
 
 python3 aplikace pro vyhledání dostupnosti paliva bez biosložky
+
 program využívá vstupní data z oficiální aplikace https://play.google.com/store/apps/details?id=eu.fss.mobile.eurooil&hl=cs&pli=1
 
 ===============================================================================
