@@ -1,5 +1,3 @@
-https://jsonformatter.org/json-to-jsonschema?utm_content=cmp-true
-
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
     "$ref": "#/definitions/Welcome9",
