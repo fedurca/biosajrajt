@@ -16,13 +16,16 @@ df = pd.DataFrame(columns=columns)
 
 # Iterate through the cs_var_list items and fill in the DataFrame
 for cs_var in cs_var_list:
-    row = {
-        'kod_cs': cs_var['kod_cs'],
-        'telefon': cs_var['telefon'],
-        #'prezentace': cs_var['prezentace']['uziv_text'],
-        'produkty': '|'.join(cs_var['produkty']),
-        #'provozni_doba': '|'.join(['{}:{}-{}'.format(pd['platnost_od'], pd['po'], pd['ne']) for pd in cs_var['provozni_doba']]),
-    }
+    try:  
+        row = {
+            'kod_cs': cs_var['kod_cs'],
+            'telefon': cs_var['telefon'],
+            'prezentace': cs_var['prezentace']['uziv_text'],
+            'produkty': '|'.join(cs_var['produkty']),
+            #'provozni_doba': '|'.join(['{}:{}-{}'.format(pd['platnost_od'], pd['po'], pd['ne']) for pd in cs_var['provozni_doba']]),
+        }
+    except KeyError:
+        continue
 
     # Iterate through the cs_ceny items to fill in the row with prices
     for cs_cena in cs_ceny:
@@ -36,7 +39,6 @@ for cs_var in cs_var_list:
                     row['cena_9'] = cena['cena']
                 elif cena['kod_produkt'] == '11':
                     row['cena_11'] = cena['cena']
-
     df = df.append(row, ignore_index=True)
 
 # Iterate through the cis_prod_list items and add columns for each product
