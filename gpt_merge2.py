@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 # Load JSON data into a Python dictionary
-with open('data.json') as f:
+with open('mini_data.json') as f:
     data = json.load(f)
 
 # Extract relevant information from the dictionary
