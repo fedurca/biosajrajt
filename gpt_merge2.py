@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+import sys
 
 # Load JSON data into a Python dictionary
 with open('mini_data.json') as f:
@@ -7,6 +8,9 @@ with open('mini_data.json') as f:
 
 # Extract relevant information from the dictionary
 cs_ceny = data['Data']['cs_ceny']
+print(type(cs_ceny))
+print(cs_ceny)
+sys.exit()
 cs_var_list = data['Data']['cs_var_list']
 cis_prod_list = data['Data']['cis_prod_list']
 
