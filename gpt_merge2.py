@@ -10,7 +10,7 @@ with open('mini_data.json') as f:
 cs_ceny = data['Data']['cs_ceny']
 print(type(cs_ceny))
 print(cs_ceny)
-sys.exit()
+#sys.exit()
 cs_var_list = data['Data']['cs_var_list']
 cis_prod_list = data['Data']['cis_prod_list']
 
@@ -63,4 +63,5 @@ df = df.fillna('')
 # Print the final DataFrame
 print(df)
 
+# Save the DataFrame to an Excel file
 df.to_excel('my_data.xlsx', index=True)
